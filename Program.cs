@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using DevLexicon.Data;
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +7,8 @@ builder.Services.AddDbContext<DevLexiconContext>(options =>
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Test.
 
 var app = builder.Build();
 
