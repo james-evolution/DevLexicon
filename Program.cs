@@ -8,8 +8,6 @@ builder.Services.AddDbContext<DevLexiconContext>(options =>
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// Test.
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

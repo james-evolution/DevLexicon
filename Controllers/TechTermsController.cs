@@ -65,7 +65,7 @@ namespace DevLexicon.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Definition,Category")] TechTerm techTerm)
+        public async Task<IActionResult> Create([Bind("Id,Name,Definition,DocumentationLink,Category")] TechTerm techTerm)
         {
             if (ModelState.IsValid)
             {
@@ -97,7 +97,7 @@ namespace DevLexicon.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Definition,Category")] TechTerm techTerm)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Definition,DocumentationLink,Category")] TechTerm techTerm)
         {
             if (id != techTerm.Id)
             {

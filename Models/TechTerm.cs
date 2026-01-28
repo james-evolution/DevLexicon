@@ -10,6 +10,10 @@ namespace DevLexicon.Models
         public string Name { get; set; } = null!;
         [Required]
         public string Definition { get; set; } = null!;
+
+        [Display(Name = "Documentation Link")]
+        public string? DocumentationLink { get; set; }
+
         [StringLength(50)]
         public string? Category { get; set; }
     }

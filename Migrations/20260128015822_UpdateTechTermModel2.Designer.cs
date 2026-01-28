@@ -3,6 +3,7 @@ using DevLexicon.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DevLexicon.Migrations
 {
     [DbContext(typeof(DevLexiconContext))]
-    partial class DevLexiconContextModelSnapshot : ModelSnapshot
+    [Migration("20260128015822_UpdateTechTermModel2")]
+    partial class UpdateTechTermModel2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,6 +41,7 @@ namespace DevLexicon.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("DocumentationLink")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
