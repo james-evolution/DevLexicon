@@ -2,7 +2,45 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container">
+    <h1 class="display-4 mb-3">DevLexicon</h1>
+    <p class="lead">A technical lexicon for .NET developers, implemented with ASP.NET MVC, Entity Framework Core, and a local SQL database.</p>
+
+    <hr />
+
+    <h2>Overview</h2>
+    <p>
+        DevLexicon is a reference application that stores and manages a curated list of technical terms relevant to modern .NET development. The application demonstrates a clean MVC architecture with server-side rendering using Razor views, data access via Entity Framework Core, and persistence in a local SQL database. It provides complete CRUD operations, search, and simple category filtering to facilitate efficient retrieval and maintenance of terminology.
+    </p>
+
+    <h2>Architecture</h2>
+    <ul>
+        <li><strong>ASP.NET MVC:</strong> Controllers coordinate requests, models encapsulate domain data and validation, and Razor views render HTML. Routing maps HTTP endpoints to controller actions.</li>
+        <li><strong>Entity Framework Core:</strong> EF Core handles object-relational mapping, tracking, and LINQ-based queries. The application's DbContext exposes a <code>DbSet&lt;TechTerm&gt;</code> for data access.</li>
+        <li><strong>Local SQL Database:</strong> Data is persisted to a local SQL database (e.g., SQL Server LocalDB). Migrations are used to evolve the schema in a controlled manner.</li>
+    </ul>
+
+    <h2>Domain Model: <code>TechTerm</code></h2>
+    <p>The <code>TechTerm</code> model represents a single lexicon entry with the following structure and annotations:</p>
+    <ul>
+        <li><code>int Id</code>: Primary key.</li>
+        <li><code>string Name</code>: Required. Max length 100. The canonical term name.</li>
+        <li><code>string Definition</code>: Required. The formal definition or explanation of the term.</li>
+        <li><code>string? DocumentationLink</code>: Optional. External URL to official documentation or authoritative references. Display name "Documentation Link".</li>
+        <li><code>string? Category</code>: Optional. Max length 50. Categorization (e.g., Framework, Language, Tooling).</li>
+    </ul>
+
+    <h2>Features</h2>
+    <ul>
+        <li><strong>CRUD via EF Core:</strong> Create, Read, Update, and Delete operations are implemented through MVC controller actions that utilize EF Core for persistence.</li>
+        <li><strong>Search:</strong> The index view supports case-insensitive search over <code>Name</code> and <code>Category</code> to quickly locate relevant terms.</li>
+        <li><strong>Category Filtering:</strong> Simple filtering by <code>Category</code> is supported via the same search input, enabling targeted views of the lexicon.</li>
+        <li><strong>Razor Views:</strong> Strongly-typed views render model metadata (e.g., display names) and validation messages.</li>
+        <li><strong>Migrations:</strong> Schema changes are managed with EF Core migrations to ensure reliable updates across environments.</li>
+    </ul>
+
+    <h2>Purpose</h2>
+    <p>
+        This project serves as a professional, technical lexicon of concepts, tools, and patterns that a .NET developer should be familiar with. It is designed to be easily extensible and maintainable, providing a practical foundation for learning, reference, and demonstration of standard ASP.NET MVC and EF Core practices.
+    </p>
 </div>
