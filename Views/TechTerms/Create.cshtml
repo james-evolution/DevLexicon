@@ -1,48 +1,53 @@
 ﻿@model DevLexicon.Models.TechTerm
 
 @{
-    ViewData["Title"] = "Create";
+	ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<div class="container d-flex justify-content-center">
+	<div class="w-100" style="max-width: 600px;">
+		<h1 class="text-center">Add a new tech term</h1>
+		<hr />
+		<div class="row justify-content-center">
+			<div class="col-md-12">
+				<form asp-action="Create">
+					<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+					<div class="form-group">
+						<label asp-for="Name" class="control-label"></label>
+						<input asp-for="Name" class="form-control" />
+						<span asp-validation-for="Name" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label asp-for="Definition" class="control-label"></label>
+						<input asp-for="Definition" class="form-control" />
+						<span asp-validation-for="Definition" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label asp-for="Category" class="control-label"></label>
+						<input asp-for="Category" class="form-control" />
+						<span asp-validation-for="Category" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label asp-for="DocumentationLink" class="control-label"></label>
+						<input asp-for="DocumentationLink" class="form-control" />
+						<span asp-validation-for="DocumentationLink" class="text-danger"></span>
+					</div>
 
-<h4>TechTerm</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Definition" class="control-label"></label>
-                <input asp-for="Definition" class="form-control" />
-                <span asp-validation-for="Definition" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Category" class="control-label"></label>
-                <input asp-for="Category" class="form-control" />
-                <span asp-validation-for="Category" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DocumentationLink" class="control-label"></label>
-                <input asp-for="DocumentationLink" class="form-control" />
-                <span asp-validation-for="DocumentationLink" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
+					<div class="form-group d-flex w-100 gap-2">
+						<input type="submit" value="Create" class="btn btn-primary button-default mt-1 flex-fill" />
+						<a class="btn btn-secondary button-default-gray mt-1 flex-fill" asp-action="Index">Back to List</a>
+					</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+				</form>
+			</div>
+		</div>
+
+
+	</div>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
 }
