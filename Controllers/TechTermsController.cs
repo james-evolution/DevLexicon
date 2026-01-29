@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using DevLexicon.Data;
 using DevLexicon.Models;
 
+// This controller defines the various action methods for CRUD operations on TechTerm entities.
 namespace DevLexicon.Controllers
 {
     public class TechTermsController : Controller
